@@ -15,11 +15,11 @@ Setup
 Rails 3: 
 - in application.rb add: 
 
-   module RakeMiddleMime
-     class Application < Rails::Application
-	   config.middleware.use MimeVersion	
-     end
-   end
+    module RakeMiddleMime
+      class Application < Rails::Application
+        config.middleware.use MimeVersion	
+      end
+    end
 
 - in  a controller or view or model:
   you can use `ENV['version']` to determine what version of API
