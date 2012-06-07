@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'mimeversion'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2012-06-07'
   s.summary     = "Mime version"
   s.description = "Parse a version form the content type string and then use it in the environment variable.

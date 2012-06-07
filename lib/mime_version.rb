@@ -8,6 +8,7 @@ class MimeVersion
     @status, @headers, @response = @app.call(env)
 
     String contentType = env["CONTENT_TYPE"]
+    ENV['version'] = ""
     if(contentType)
       String tag = "version="
 
