@@ -13,11 +13,11 @@ Setup
 --------------------------------
 
 Rails 3: 
-- add an initializer: `mime_version.rb`
+add an initializer: `mime_version.rb`
     require 'mime_version'
 
 	Rails.application.config.middleware.use MimeVersion do
 	end
 
-- in  a controller or view or model:
+in  a controller or view or model:
   you can use `ENV['version']` to determine what version of API
