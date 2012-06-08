@@ -5,7 +5,7 @@ class MimeVersion
   end
 
   def call(env)
-    @status, @headers, @response = @app.call(env)
+
 
     String contentType = env["CONTENT_TYPE"]
     ENV['version'] = ""
@@ -20,6 +20,7 @@ class MimeVersion
 
       end
     end
+  @status, @headers, @response = @app.call(env)
   [@status, @headers, @response]
   end
 end
