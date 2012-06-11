@@ -4,23 +4,20 @@ class MimeVersion
     #@default_version = default_version
   end
 
+  def self.parse_version(content_type)
+    tag = "version="
+    @version = @default_version
+    mime_types = content_type.split(";")
+    @hash = Hash[content_type.split(';').map { |i| i.split('=') }]
+    @version = @hash["version"]
+  end
+
   def call(env)
-    content_type = env["CONTENT_TYPE"]
+
     ENV['version'] = ""
-    if(content_type)
-      tag = "version="
-
-      @version = @default_version
-      if env.has_key? "CONTENT_TYPE"
-        mime_types = env["CONTENT_TYPE"].split(";")
-
-
-
-        @version = Hash[env["CONTENT_TYPE"].split(';').map { |i| i.split(tag) }]
-        ENV['version'] = @version.to_s
-      end
-
-
+    if env.has_key? "CONTENT_TYPE"
+      @version = MimeVersion.parse_version(env["CONTENT_TYPE"])
+      ENV['version'] = @version
     end
   @default_version.call(env)
   end
