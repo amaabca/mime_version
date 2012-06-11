@@ -1,6 +1,6 @@
 Overview
 --------------------------------
-Parse a version form the content type string and then use it in the environment variable.
+Parse a version from the content type string and then use it in the environment variable.
 
 Mime-version is a simple rack middleware gem to parse a version string out of the content-type in the http request. 
 
