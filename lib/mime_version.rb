@@ -5,12 +5,10 @@ class MimeVersion
   end
 
   def call(env)
-
-
-    String contentType = env["CONTENT_TYPE"]
+    content_type = env["CONTENT_TYPE"]
     ENV['version'] = ""
     if(contentType)
-      String tag = "version="
+      tag = "version="
 
       index = env["CONTENT_TYPE"].index(tag)
 
