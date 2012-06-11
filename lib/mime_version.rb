@@ -9,12 +9,12 @@ class MimeVersion
     @version = @default_version
     mime_types = content_type.split(";")
     @hash = Hash[content_type.split(';').map { |i| i.split('=') }]
-    @version = @hash["version"]
+    @version = @hash["version"] || @default_version.to_s
   end
 
   def call(env)
 
-    ENV['version'] = ""
+    ENV['version'] = @default_version.to_s
     if env.has_key? "CONTENT_TYPE"
       @version = MimeVersion.parse_version(env["CONTENT_TYPE"])
       ENV['version'] = @version
