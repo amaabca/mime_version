@@ -9,5 +9,5 @@ Gem::Specification.new do |s|
   s.email       = 'chris.brulak@ama.ab.ca'
   s.files       = ["lib/mime_version.rb"]
   s.homepage    =
-    'http://rubygems.org/gems/mimeversion'
+    'http://rubygems.org/gems/mime_version'
 end
