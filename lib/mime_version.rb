@@ -1,24 +1,27 @@
 class MimeVersion
-  def initialize(app, message = "Mime Version")
-    @app = app
-    @message = message
+  def initialize(app)
+    @default_version = app
+    #@default_version = default_version
   end
 
   def call(env)
     content_type = env["CONTENT_TYPE"]
     ENV['version'] = ""
-    if(contentType)
+    if(content_type)
       tag = "version="
 
-      index = env["CONTENT_TYPE"].index(tag)
+      @version = @default_version
+      if env.has_key? "CONTENT_TYPE"
+        mime_types = env["CONTENT_TYPE"].split(";")
 
-      if(index)
-        @version = env["CONTENT_TYPE"][index + tag.length,3]
-        ENV['version'] = @version
 
+
+        @version = Hash[env["CONTENT_TYPE"].split(';').map { |i| i.split(tag) }]
+        ENV['version'] = @version.to_s
       end
+
+
     end
-  @status, @headers, @response = @app.call(env)
-  [@status, @headers, @response]
+  @default_version.call(env)
   end
 end
