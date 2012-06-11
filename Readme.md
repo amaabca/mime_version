@@ -6,7 +6,7 @@ Mime-version is a simple rack middleware gem to parse a version string out of th
 
 The aim is to build a better way of version API calls.
 
-For example: "Content-type:text/html;vnd.example-com.foo+json; version=1.1" will be parsed into 1.1. 
+For example: `Content-type:text/html;vnd.example-com.foo+json; version=1.1` will be parsed into 1.1. 
 
 
 Setup
