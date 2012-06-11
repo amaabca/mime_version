@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'mimeversion'
+  s.name        = 'mime_version'
   s.version     = '0.0.3'
   s.date        = '2012-06-07'
   s.summary     = "Mime version"
