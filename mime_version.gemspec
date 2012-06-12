@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'mime_version'
-  s.version     = '0.0.4'
+  s.version     = '0.0.5'
   s.date        = '2012-06-07'
   s.summary     = "Mime version"
   s.description = "Parse a version from the content type string and then use it in the environment variable.
@@ -8,6 +8,5 @@ Gem::Specification.new do |s|
   s.authors     = ["Chris Brulak"]
   s.email       = 'chris.brulak@ama.ab.ca'
   s.files       = ["lib/mime_version.rb"]
-  s.homepage    =
-    'http://rubygems.org/gems/mime_version'
+  s.homepage    = 'https://github.com/amaabca/mime_version'
 end
